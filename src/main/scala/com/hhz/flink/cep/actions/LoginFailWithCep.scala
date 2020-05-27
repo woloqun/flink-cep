@@ -80,6 +80,7 @@ object LoginFailWithCep {
       new SimpleStringSchema(),
       properties
     )
+    strStream.print()
     strStream.filter(_ != null).addSink(kafkaProducer)
 
 
