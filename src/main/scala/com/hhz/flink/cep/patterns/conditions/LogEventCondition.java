@@ -3,7 +3,7 @@ package com.hhz.flink.cep.patterns.conditions;
 
 import com.googlecode.aviator.AviatorEvaluator;
 import com.hhz.flink.cep.patterns.Obj2Map;
-import com.hhz.flink.cep.patterns.aviator.GetFieldFunction;
+import com.hhz.flink.cep.patterns.aviator.*;
 import com.hhz.flink.cep.pojo.LoginEvent;
 import org.apache.flink.cep.pattern.conditions.SimpleCondition;
 
@@ -15,6 +15,10 @@ public class LogEventCondition  extends SimpleCondition<LoginEvent> implements S
 
     static {
         AviatorEvaluator.addFunction(new GetFieldFunction());
+        AviatorEvaluator.addFunction(new GetString());
+        AviatorEvaluator.addFunction(new GetInt());
+        AviatorEvaluator.addFunction(new GetLong());
+        AviatorEvaluator.addFunction(new GetDouble());
     }
 
     //getField(uid)=\"uid\"
